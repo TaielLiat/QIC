@@ -1,0 +1,55 @@
+{% extends 'layout.html' %} {%block body%}
+<div>
+    <form class="mt-5" action="/crear_reserva" method="POST">
+        <h2 class="mt-5 text-white"><strong>| Nueva reserva</strong> </h2>
+        <div class="form-group">
+            <legend class="mt-4"> Dia de la reserva</legend>
+            <input type="date" class="form-control" style="width: 15rem;" name="fecha" pattern="dd-mm-yyyy" required>
+        </div>
+        <legend class="mt-4"> Horario de ingreso</legend>
+        <input type="time" class="form-control me-2" style="width: 15rem;" name="hora_inicio">
+
+        <div class="form-group">
+            <legend class="mt-2">Mesa</legend>
+            <select class="form-select pleg fuente" name="id_mesa" required>
+            {% for mesa in mesas%} 
+            <option> {{ mesa.0 }}</option>
+            {% endfor %}
+        </select>
+        </div>
+        <div class="form-group">
+            <legend class="mt-4">ID del cliente</legend>
+            <div class="col-sm-10 row">
+                <select class="form-select pleg fuente" style=" margin-left: 10px;" name="id_cliente" required>
+                {% for cliente in clientes %} 
+                <option> {{ cliente.0 }}</option> 
+                {% endfor %}
+            </select>
+            </div>
+            <div class="botones">
+                <a href="/clientes" target="_blank" class="btn btn-primary"> Ver clientes</a>
+                <a href="/clientes" class="btn btn-primary mx-lg-2"> Crear nuevo cliente</a>
+            </div>
+        </div>
+        <div class="form-group">
+            <legend class="mt-4">Seña</legend>
+            <div class="form-group" style="width: 12rem">
+                <div class="input-group mb-3">
+                    <span class="input-group-text">$</span>
+                    <input type="number" class="form-control fuente" aria-label=" Amount (to the nearest dollar)" name="senia">
+                    <span class="input-group-text">.00</span>
+                </div>
+            </div>
+        </div>
+        <small class="text-muted" style="margin-top: -1rem; position: absolute;"> Formato correcto: 30000.75 : Formato incorrecto: 30.000,75 </small>
+        <div class="form-group">
+            <legend class="mt-4">Tamaño del grupo</legend>
+            <div class="col-sm-10 row">
+                <select class="form-select select" id="loop" name="tamano_grupo" required>
+            </select>
+            </div>
+        </div>
+        <button type="submit" id="crear" class="btn btn-primary enviar"> Enviar </button>
+    </form>
+</div>
+{% endblock %}

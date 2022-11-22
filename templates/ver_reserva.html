@@ -1,0 +1,47 @@
+{% extends 'layout.html' %} {%block body%} {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
+<div class="alert alert-warning alert-dismissible fade show mt-4" role="alert" data-dismiss="alert">
+    {{ message }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+</button>
+</div>
+{% endfor %} {% endif %} {% endwith %}
+<div class="container">
+    <h2 class="mt-4"> Datos de servicio</h2>
+    <div>
+        <legend class="mt-5">Id del Servicio</legend>
+        <p class="dato"> {{ servicio.0 }} </p>
+    </div>
+    <div>
+        <legend class="mt-4">Fecha</legend>
+        <p class="dato"> {{ servicio.8 }} </p>
+    </div>
+    <div>
+        <legend class="mt-4">Horario de ingreso</legend>
+        <p class="dato"> {{ servicio.6 }}</p>
+    </div>
+    <div>
+        <legend class="mt-4">Mesa</legend>
+        <p class="dato"> {{ servicio.2 }} </p>
+    </div>
+    <div>
+        <legend class="mt-4">ID del cliente</legend>
+        <div style="display: flex">
+            <p class="dato"> {{ servicio.1 }} </p>
+            <a href="/clientes" style="height: 40px; margin-left: 1rem;" target="_blank" class="btn btn-primary"> Ver clientes</a>
+        </div>
+    </div>
+    <div>
+        <legend class="mt-4">Seña</legend>
+        <p class="dato"> {{servicio.5}} </p>
+    </div>
+    <div>
+        <legend class="mt-4">Tamaño del grupo</legend>
+        <p class="dato"> {{ servicio.4 }}</p>
+    </div>
+    <div>
+        <a href="/editar_reserva/{{servicio.0}}" class="btn btn-primary"> Editar</a>
+        <a href="/reservas" class="btn btn-primary ms-2"> Volver</a>
+    </div>
+</div>
+
+{% endblock %}

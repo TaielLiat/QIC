@@ -1,0 +1,57 @@
+{% extends 'layout.html'%} {% block body%} {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
+<div class="alert alert-warning alert-dismissible fade show mt-4" role="alert" data-dismiss="alert">
+    {{ message }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+</button>
+</div>
+{% endfor %} {% endif %} {% endwith %}
+
+<h2 class="mt-5 text-white"><strong>| Clientes</strong> </h2>
+<form action="/agregar_cliente" method="POST">
+    <div class="form-group">
+        <label class="form-label mt-4">Nombre</label>
+        <input type="text" name="nombre" class="form-control" placeholder="Ingresar nombre" required>
+    </div>
+    <div class="form-group">
+        <label class="form-label mt-4">Apellido</label>
+        <input type="text" name="apellido" class="form-control" placeholder="Ingresar apellido" required>
+    </div>
+    <div class="form-group">
+        <label class="form-label mt-4">Telefono</label>
+        <input type="tel" name="telefono" class="form-control" placeholder="Ingresar telefono" pattern="[0-9]{10}" maxlength="13" required>
+    </div>
+    <div class="form-group">
+        <label class="form-label mt-4">Email</label>
+        <input type="email" name="email" class="form-control" placeholder="Ingresar email" required>
+    </div>
+    <button type="submit" class="btn btn-primary mt-4">Enviar</button>
+</form>
+<table class="table mt-5 table-dark">
+    <thead class="table-primary text-center">
+        <tr>
+            <td> ID </td>
+            <td> Nombre</td>
+            <td> Apellido</td>
+            <td> Teléfono</td>
+            <td> Email</td>
+            <td> </td>
+        </tr>
+    </thead>
+    <tbody class="text-center">
+        {% for cliente in clientes %}
+        <tr>
+            <td> {{ cliente.0 }}</td>
+            <td> {{ cliente.1 }}</td>
+            <td> {{ cliente.2 }}</td>
+            <td> {{ cliente.3 }}</td>
+            <td> {{ cliente.4 }}</td>
+            <td>
+                <a href="/editar_cliente/{{cliente.0}}" class="btn btn-warning"> Editar</a>
+                <a href="/borrar_cliente/{{cliente.0}}" class="btn btn-danger"> Borrar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock%}

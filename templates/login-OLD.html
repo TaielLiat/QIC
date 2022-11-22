@@ -1,0 +1,47 @@
+{% extends 'layout.html' %} {%block body%} {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
+<div class="alert alert-warning alert-dismissible fade show mt-4" role="alert" data-dismiss="alert">
+    {{ message }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+</button>
+</div>
+{% endfor %} {% endif %} {% endwith %}
+<div class="container mx-auto mt-4">
+    <div class="caja1">
+        <form method="post" action="login.php">
+            <!---<div class="ub1">&#128273; Ingresar usuario</div>-->
+
+            <legend class="mt-4 text-center">Iniciar Sesión</legend>
+            <div class="form-group ">
+                <label class="form-label mt-4">Ingresar usuario</label>
+                <div class="form-floating mb-3" style="width: 25rem; margin: 0 auto;">
+                    <input type=" text " class="form-control " id="floatingInput " placeholder="Usuario">
+                    <label for="floatingInput ">Usuario</label>
+                </div>
+                <div class="form-group ">
+                    <div class="form-floating " style="width: 25rem; margin: 0 auto;">
+                        <input type="password " class="form-control " id="pass " placeholder="Password ">
+                        <label for="floatingPassword ">Contraseña</label>
+                    </div>
+                </div>
+
+                <div class="form-check " style="width: 25rem; margin: 0 auto; text-align: left;">
+                    <input class="form-check-input " type="checkbox " onclick="verContrasenia() " value id> Mostrar contraseña
+                    <input class="form-check-input" type="checkbox" value id>
+                </div>
+                <div class="form-group ">
+                    <label class="form-label mt-4 ">Rol</label>
+                    <select class="form-control " id="exampleSelect1 " style="width: 25rem; margin: 0 auto;">
+                        <option value="0 "> Seleccionar</option>
+                        <option value="Usuario ">Usuario</option>
+                        <option value="Admin ">Administrador</option>
+                    </select>
+                </div>
+                <div class="text-center">
+                    <button type="submit " class="btn btn-primary enviar "> Ingresar </button>
+                    <button type="reset " class="btn btn-primary enviar "> Cancelar </button>
+                </div>
+        </form>
+        </div>
+
+    </div>
+    {% endblock %}

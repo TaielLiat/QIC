@@ -1,0 +1,224 @@
+* {
+    text-decoration: none;
+}
+
+body {
+    background-color: rgb(12, 31, 76);
+}
+
+.tipo-servicio {
+    background-color: #1a0933;
+    border: none;
+    pointer-events: none;
+    font-size: smaller;
+    color: rgb(253, 253, 253, 40%);
+    margin-top: -10px;
+    position: absolute;
+}
+
+.mesa-libre {
+    background-color: rgb(31, 187, 65);
+    border: 1px solid rgb(97, 255, 52);
+    box-shadow: 2px 0px 10px 8px rgb(97, 255, 72);
+}
+
+.mesa-ocupada {
+    background-color: rgb(220, 151, 24);
+    border: 1px solid rgb(255, 192, 75);
+    box-shadow: 2px 0px 10px 8px rgb(255, 192, 75);
+}
+
+.mesa-no-disponible {
+    background-color: rgb(175, 23, 23);
+    border: 1px solid rgb(255, 75, 75);
+    box-shadow: 2px 0px 10px 8px rgb(255, 75, 75);
+}
+
+.pleg {
+    width: 6rem;
+}
+
+.cont {
+    background-color: #1a0933;
+    border: 1px solid #1a0933;
+    height: 60px;
+}
+
+.cont h5 {
+    font-size: 20px;
+    color: rgb(255, 255, 255, 20%);
+    margin-left: 10px;
+}
+
+.enviar {
+    margin-top: 1rem;
+    margin-bottom: 10rem
+}
+
+.select {
+    width: 6rem;
+    margin-left: 10px;
+    font-size: 1.2rem;
+}
+
+.botones {
+    margin-top: 1rem;
+    text-decoration: none;
+}
+
+.fuente {
+    font-size: 1.2rem;
+}
+
+
+/*  FORMULARIO POPUP   */
+
+* {
+    box-sizing: border-box;
+}
+
+
+/* POP-UP FORMULARIO */
+
+.open-button {
+    background-color: #555;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
+    position: fixed;
+    bottom: 23px;
+    right: 28px;
+    width: 280px;
+}
+
+.form-popup {
+    display: none;
+    position: absolute;
+    margin: 5rem auto;
+    box-shadow: 0px 0px 10px 8px rgb(2, 0, 102);
+    z-index: 9;
+}
+
+.form-container {
+    max-width: 700px;
+    padding: 30px;
+    background-color: rgb(2, 0, 102);
+}
+
+
+/* Full-width input fields */
+
+.form-container input[type=text],
+.form-container input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+}
+
+
+/* When the inputs get focus, do something */
+
+.form-container input[type=text]:focus,
+.form-container input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+
+/* Set a style for the submit/login button */
+
+.form-container .btn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 6px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+
+
+/* Add a red background color to the cancel button */
+
+.form-container .cancel {
+    background-color: red;
+}
+
+
+/* Add some hover effects to buttons */
+
+.form-container .btn:hover,
+.open-button:hover {
+    opacity: 1;
+}
+
+.numero-mesa {
+    background-color: rgb(29, 29, 29);
+    padding: 5px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+.dato {
+    color: rgb(255, 255, 255);
+    width: 10rem;
+    border-bottom: 3px solid #5d21b6;
+    padding: 3px;
+    border-radius: 10%;
+}
+
+.cartuwu a {
+    display: none;
+}
+
+
+/*  INICIO  */
+
+.dmesas {
+    background-image: url("https://img.freepik.com/vector-premium/concepto-interior-restaurante-apartamento-muebles-mesas-sillas-bebidas-comida-mostrador-armario-botellas-decoracion-paredes-plantas-fondo-ilustracion-vectorial-diseno-plano-dibujos-animados_198565-1058.jpg?w=996");
+    background-size: 100%;
+    background-position-y: 60%;
+}
+
+.dempleados {
+    background-image: url("https://img.freepik.com/vector-gratis/retrato-equipo-empleados-profesionales-felices-trabajadores-oficina-dibujos-animados-ropa-corporativa-grupo-colegas-trabajo-juntos-ilustracion-vectorial-plana-carrera-trabajo-equipo-concepto-inicio_74855-25264.jpg?w=996&t=st=1669077479~exp=1669078079~hmac=99346d658174e0c7680ecafa4786768697118a214f7bb44ffab9cd7b2ab58557");
+    background-size: 100%;
+    background-position-y: 60%;
+}
+
+.dreservas {
+    background-image: url("https://1.bp.blogspot.com/-lZX6iYssaDM/YDjoDTuemTI/AAAAAAAABBM/6cXHq00HL6weGbj5BLCjRk8g7BMztxQkwCLcBGAsYHQ/s1832/vista%2Bde%2Bcalendario%2Bsharepoint.png");
+    background-size: 100%;
+    background-position-y: 60%;
+}
+
+.dclientes {
+    background-image: url("https://img.freepik.com/vector-gratis/hombre-vestido-mascara-medica-cliente_52683-41296.jpg?w=740&t=st=1669079039~exp=1669079639~hmac=6b3b3ee14030c393ee3494e0d58d5958caf8c4cc2eada844cfdb65ddedbbbd6f");
+    background-size: 100%;
+    background-position-y: 30%;
+}
+
+.darchivos {
+    background-image: url("https://kinsta.com/es/wp-content/uploads/sites/8/2020/10/tipos-de-archivos-de-imagen.png");
+    background-size: 100%;
+    background-position-y: 30%;
+}
+
+.titulo {
+    text-shadow: 0 0 8px black!important;
+    font-size: 34px;
+    color: aliceblue;
+    font-weight: bold;
+    text-align: center;
+}

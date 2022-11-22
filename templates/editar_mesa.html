@@ -1,0 +1,60 @@
+{% extends 'layout.html' %} {%block body%}
+<div class="container">
+    <h2 class="mt-4"> Datos de servicio</h2>
+
+    <form action="/modificar_mesa/{{ servicio.0 }}" method="POST">
+        <div class="form-group">
+            <legend class="mt-5">Mesa</legend>
+            <select class="form-select pleg fuente" name="id_mesa">
+                <option >{{ servicio.2 }}</option>
+                {% for disponible in disponibles%} 
+                <option> {{ disponible.0 }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div>
+            <legend class="mt-4">ID del cliente</legend>
+            <div>
+                <select class="form-select pleg fuente" name="id_cliente">
+                    <option >{{ servicio.1 }}</option>
+                    {% for cliente in clientes%}
+                    <option> {{ cliente.0 }}</option>   
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="mt-4">
+                <a href="/clientes" target="_blank" class="btn btn-primary"> Ver clientes</a>
+                <a href="/clientes" class="btn btn-primary mx-lg-2"> Crear nuevo cliente</a>
+            </div>
+        </div>
+        <div>
+            <legend class="mt-4">Estado</legend>
+            <input class="form-control" name="estado" value="{{ mesa.1 }}" />
+        </div>
+
+        <div>
+            <legend class="mt-4">Tamaño del grupo</legend>
+            <input type="number" class="form-control" name="tamano_grupo" value="{{servicio.4}}" min="1" max="50" />
+        </div>
+        <div>
+            <legend class="mt-4 ">Seña</legend>
+            <input type="number" class="form-control fuente " name="senia" value="{{servicio.5}}" step="0,01 ">
+        </div>
+        <div>
+            <legend class="mt-4 ">Horario de ingreso</legend>
+            <input type="time " class="form-control fuente " value="{{servicio.6}} " min="00:00 " max="23:59 " name="hora_inicio">
+        </div>
+        <div class="mt-4 ">
+            <button type="submit " class="btn btn-primary me-2 "> Enviar</button>
+            <a href="/ver_mesa/{{mesa.0}} " class="btn btn-primary "> Volver</a>
+        </div>
+    </form>
+
+</div>
+<style>
+    .form-control {
+        width: 10rem;
+        font-size: 1.2rem;
+    }
+</style>
+{% endblock %}

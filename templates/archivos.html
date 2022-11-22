@@ -1,0 +1,35 @@
+{% extends 'layout.html' %} {%block body%}
+<h2 class="mt-5 text-white"><strong>| Archivo de Servicios</strong> </h2>
+<table class="table mt-5 table-dark">
+    <thead class="table-primary text-center">
+        <tr>
+            <td> ID: Servicio </td>
+            <td> ID: Cliente</td>
+            <td> ID: Mesa</td>
+            <td> Grupo</td>
+            <td> Seña</td>
+            <td> Hora inicio </td>
+            <td> Hora fin</td>
+            <td> Fecha</td>
+            <td></td>
+        </tr>
+    </thead>
+    <tbody class="text-center">
+        {% for servicio in servicios %}
+        <tr lista-datos>
+            <td> {{ servicio.0 }}</td>
+            <td> {{ servicio.1 }}</td>
+            <td> {{ servicio.2 }}</td>
+            <td> {{ servicio.4 }}</td>
+            <td> ${{ servicio.5 }}</td>
+            <td> {{ servicio.6 }}hs</td>
+            <td> {{ servicio.7 }}hs</td>
+            <td> {{ servicio.8 }}</td>
+            <td>
+                <a href="/editar_cliente/{{servicio.1}}" class="btn btn-warning"> Ver cliente</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,7 @@
+instalar framework
+pip3 install flask flask-mysqldb
+
+ejecutar servidor
+python App.py
+
+Participantes: Cleiman, Mazarelli

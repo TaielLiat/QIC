@@ -1,0 +1,43 @@
+{% extends 'layout.html'%} {% block body%} {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
+<div class="alert alert-warning alert-dismissible fade show mt-4" role="alert" data-dismiss="alert">
+    {{ message }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+</button>
+</div>
+{% endfor %} {% endif %} {% endwith %}
+<h2 class="mt-5 text-white"><strong>| Empleados</strong> </h2>
+<table class="table mt-5 table-dark">
+    <thead class="table-primary text-center">
+        <tr>
+            <td> ID </td>
+            <td> Nombre</td>
+            <td> Apellido</td>
+            <td> Teléfono</td>
+            <td> Email</td>
+            <td> Dirección </td>
+            <td> CUIT</td>
+            <td> CUIL </td>
+            <td></td>
+        </tr>
+    </thead>
+    <tbody class="text-center">
+        {% for empleado in empleados %}
+        <tr lista-datos>
+            <td id="id"> {{ empleado.0 }}</td>
+            <td id="nombre"> {{ empleado.1 }}</td>
+            <td id="apellido"> {{ empleado.2 }}</td>
+            <td id="telefono"> {{ empleado.3 }}</td>
+            <td id="email"> {{ empleado.4 }}</td>
+            <td id="direccion"> {{ empleado.5 }}</td>
+            <td id="cuit"> {{ empleado.6 }}</td>
+            <td id="cuil"> {{ empleado.7 }}</td>
+            <td>
+                <a href="/editar_empleado/{{empleado.0}}" class="btn btn-warning"> Editar</a>
+                <a href="/borrar_empleado/{{empleado.0}}" class="btn btn-danger"> Borrar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock%}

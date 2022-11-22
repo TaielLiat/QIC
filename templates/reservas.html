@@ -1,0 +1,85 @@
+{% extends 'layout.html' %} {%block body%} {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
+<div class="alert alert-warning alert-dismissible fade show mt-4" role="alert" data-dismiss="alert">
+    {{ message }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+</button>
+</div>
+{% endfor %} {% endif %} {% endwith %}
+<div style="display: flex;">
+    <h2 class="mt-5 text-white"><strong>| Reservas</strong> </h2>
+    <a href="/nueva_reserva" class="btn btn-primary " style="margin: 3rem 0 0 auto"> Crear nueva reserva</a>
+</div>
+<div>
+    <div class="container mx-auto mt-4 d-grid">
+
+        <div class="row">
+            <h2> RESERVAS DEL DIA</h2>
+            {% for servicio in servicios %}
+            <div class="col-md-auto mt-4 ">
+                <div class="card" style=" background-color: rgb(240, 205, 152);">
+                    <div class="card-body cartauwu">
+                        <h5 class="card-title" id="mesa">ID Servicio: {{ servicio.2 }}</h5>
+                        <p> <span>Mesa: </span>{{ servicio.4 }} </p>
+                        <p> <span>Hora: </span>{{servicio.8}}hs</p>
+                        <p> <span>Cliente: </span>{{ servicio.0 }} {{ servicio.1 }} ({{ servicio.3 }})</p>
+                        <p> <span>Seña: </span> ${{ servicio.7 }}</p>
+                        <p> <span>Tamaño grupo: </span> {{ servicio.6 }}</p>
+                        <div class="mt-4" style="text-align: center;">
+                            <a href="/iniciar_reserva/{{servicio.2}}" class="btn btn-primary" id="levantar" style="font-size: 1.2rem; background-color: rgb(139, 202, 223); box-shadow: 0px 0px 8px 0px  lightblue;"><i class="fas fa-link"></i> Iniciar</a>
+                            <a href="/ver_reserva/{{servicio.2}}" class="btn btn-primary ver" id="ver" style="font-size: 1.2rem;"><i class="fas fa-link"></i> Ver</a>
+                            <a href="/borrar_reserva/{{servicio.2}}" class="btn btn-danger" onclick="alerta()" style="font-size: 1.2rem;"><i class="fab fa-github "></i> Eliminar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            <hr class="mt-5">
+            <h2> TODAS LAS RESERVAS</h2>
+            {% for toda in todas %}
+            <div class="col-md-auto mt-4">
+                <div class="card" style=" background-color: rgb(240, 205, 152);">
+                    <div class="card-body cartauwu">
+                        <h5 class="card-title" id="mesa">ID Servicio: {{ toda.2 }}</h5>
+                        <p> <span>Mesa: </span>{{ toda.4 }} </p>
+                        <div style="display: flex;">
+                            <p style="margin-right: 1rem;"> <span>Fecha: </span>{{toda.10}}</p>
+                            <p><span>Hora: </span>{{toda.8}}hs</p>
+                        </div>
+                        <p> <span>Cliente: </span>{{ toda.0 }} {{ toda.1 }} ({{ toda.3 }})</p>
+                        <p> <span>Seña: </span> ${{ toda.7 }}</p>
+                        <p> <span>Tamaño grupo: </span> {{ toda.6 }}</p>
+                        <div class="mt-4" style="text-align: center;">
+                            <a href="/ver_reserva/{{toda.2}}" class="btn btn-primary ver" id="ver" style="font-size: 1.2rem;"><i class="fas fa-link"></i> Ver</a>
+                            <a href="/borrar_reserva/{{toda.2}}" class="btn btn-danger " onclick="alerta()" style="font-size: 1.2rem;"><i class="fab fa-github "></i> Eliminar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<script>
+    function alerta() {
+        alert("¿Estás seguro de eliminar la reserva?")
+    }
+</script>
+<style>
+    p {
+        margin-bottom: 0!important;
+        color: black;
+    }
+    
+    h5 {
+        color: rgb(64, 21, 134);
+        font-weight: bolder;
+    }
+    
+    span {
+        color: rgb(87, 11, 11);
+        font-size: 18px;
+        font-weight: bolder;
+    }
+</style>
+{% endblock %}
