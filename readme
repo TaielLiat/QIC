@@ -4,4 +4,7 @@ pip3 install flask flask-mysqldb
 ejecutar servidor
 python App.py
 
+Base de datos:
+https://drive.google.com/drive/u/1/folders/1dnAwWRQd5zU3D5X6HW-Iv6KQlSm1j6pN
+
 Participantes: Cleiman, Mazarelli
