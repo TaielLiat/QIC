@@ -14,10 +14,6 @@ mysql = MySQL(app) #creo conexion
 #settings
 app.secret_key = 'msk'
 
-if __name__ == '__main__':
-    app.run(port = 3000, debug = True)
-
-
 ########## PANTALLA DE INICIO ##########
 
 @app.route('/inicio')#PANTALLA DE INICIO DE LA PAGINA
@@ -554,6 +550,9 @@ def Archivos():
     return render_template('archivos.html', servicios = datos)
 
 ########## fin PANTALLA DE ARCHIVOS ##########
+
+if __name__ == '__main__':
+    app.run(port = 3000, debug = True)
 
 
 
